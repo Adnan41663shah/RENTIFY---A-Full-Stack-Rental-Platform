@@ -1,38 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 
-    <style>
-        #filters{
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .filter{
-            margin-top: 1rem;
-            text-align: center;
-            opacity: 0.7;
-            margin-right: 2rem;
-        }
-        .filter:hover{
-            opacity: 1;
-            cursor:pointer;
-        }
-        .filter p{
-            font-size: 0.8rem;
-        }
-        .tax-info{
-            display: none;
-        }
-        .tax-toggle{
-            border: 1px solid black;
-            border-radius: 1rem;
-            height: 3.25rem;
-            padding: 1rem;
-            margin-left: 1.3rem;
-            display: flex;
-            align-items: center;
-        }
-    </style>
-    <div id="filters" class="offset-1">
+    <div id="filters" class="">
         <div class="filter">
             <div><i class="fa-solid fa-fire"></i></div>
             <p>Trending</p>
@@ -73,14 +41,8 @@
             <div><i class="fa-solid fa-sailboat"></i></div>
             <p>Boat</p>
         </div>
-
-        <div class="tax-toggle">
-            <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
-            </div>
-        </div>
     </div>
+
     <div class="row row-cols-large-4 row-cols-md-3 row-cols-sm-2 mt-3">
         <% for(listing of allListings) { %>
             <a href="/listings/<%= listing._id %>" class="listing-link" >
