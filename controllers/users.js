@@ -29,7 +29,7 @@ module.exports.loginForm = (req, res) =>{
 
 module.exports.loginUser = async(req, res) => {
         req.flash("success", "Welcome Back to Rentify!")
-        let redirectUrl = res.locals.redirectUrl || "/listings"
+        let redirectUrl = res.locals.redirectUrl || "/listings";
         res.redirect(redirectUrl);
 }
 

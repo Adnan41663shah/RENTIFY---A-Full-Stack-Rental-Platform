@@ -20,6 +20,7 @@ const User = require("./models/user.js")
 const listingRoute = require("./routes/listings.js");
 const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
+const bookingRoute = require("./routes/bookings.js");
 
 const dbUrl = process.env.ATLASDB_URl;
 
@@ -33,9 +34,13 @@ app.set("view engine", "ejs");
 app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public"))); // if you have static files
 app.use(cookieParser("secretecode"));
+
+// Serve receipts folder as static
+app.use("/receipts", express.static(path.join(__dirname, "receipts")));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
@@ -90,6 +95,8 @@ app.use("/listings/:id/review", reviewRoute);
 
 // user routes
 app.use("/", userRoute);
+
+app.use("/api/bookings", bookingRoute);
 
 // 404 Not Found
 app.use((req, res, next) => {

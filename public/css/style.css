@@ -72,7 +72,7 @@ body {
 }
 
 /* 🔽 Mobile adjustments */
-@media (max-width: 768px) {
+@media (max-width: 765px) {
     .explore-btn {
         display: none !important;
     }
@@ -105,25 +105,21 @@ body {
     }
 
     .navbar-nav {
-        font-size: 0.5rem;
         margin-left: auto;
-        text-align: right;
-        /* align menu text to right */
+        font-size: 0.9rem;
         background-color: #e3e3e3;
-        width: 30%;
+        width: 60%;
         border-radius: 8px;
-        padding: 0 1rem 0 8px;
+        padding: 1rem;
     }
 }
-
+.nav-link {
+    color: #000000 !important;
+}
 
 .fa-compass {
     color: #fe424d;
     font-size: 2rem;
-}
-
-.nav-link {
-    color: #222222 !important;
 }
 
 /* filters */
@@ -160,7 +156,7 @@ body {
 }
 
 /* Only apply horizontal scroll on small screens */
-@media (max-width: 768px) {
+@media (max-width: 765px) {
     #filters {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -168,8 +164,8 @@ body {
         margin-right: 0;
     }
     .tax-toggle{
-        width: 100%;
-        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
 
@@ -178,13 +174,13 @@ body {
 }
 
 .tax-toggle {
-    border: 1px solid black;
     border-radius: 1rem;
     height: 3.25rem;
     padding: 1rem;
     margin-left: 1.3rem;
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: end !important;
 }
 /* filters ends here */
 
@@ -266,15 +262,27 @@ body {
     background-color: rgb(145, 255, 196) !important;
     color: black !important;
 }
-
-/*edit page */
-.edit-btn {
+.edit-btn{
+    border:none !important;
     background-color: #fe424d !important;
-    border: none !important;
+    transition: 0.2s linear !important;
+}
+.edit-btn:hover{
+    opacity: 0.7;
 }
 
-.edit-btn:hover {
-    opacity: 0.7;
+/*edit page */
+.book-btn {
+  background: linear-gradient(to right, #fe424d 50%, #495057 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right bottom !important;
+  color: #fff !important;
+  border: none !important;
+  transition: all 0.2s linear !important;
+}
+
+.book-btn:hover {
+  background-position: left bottom !important; /* slides the gradient left to right */
 }
 
 /* show page */

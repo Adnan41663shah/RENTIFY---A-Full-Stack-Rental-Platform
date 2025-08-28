@@ -25,18 +25,18 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav text-end">
         <div class="tax-toggle">
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-            <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
-        </div>
-    </div>
-        <a class="nav-link" href="/listings/new"><i class="fa-solid fa-upload me-2"></i>Rentify Your Property</a>
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+              <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
+          </div>
+       </div>
+        <a class="nav-link" href="/listings/new"><i class="fa-solid fa-upload me-2"></i>Host Your House</a>
         <% if(!currUser) { %>
           <a class="nav-link" href="/signup"><b>Signup</b></a>
           <a class="nav-link" href="/login"><b>Login</b></a>
         <% } %>
         <% if(currUser){ %>
-          <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <a class="nav-link" href="/logout"><b>Logout</b></a>
         <% } %>
       </div>
     </div>
