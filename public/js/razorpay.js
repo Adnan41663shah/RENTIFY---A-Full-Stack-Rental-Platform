@@ -40,7 +40,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
 
   if (!currUser) {
     alert("❌ Please login to book this listing.");
-    window.location.href = "http://localhost:8080/login";
+    window.location.href = "/login";
     return;
   }
 
