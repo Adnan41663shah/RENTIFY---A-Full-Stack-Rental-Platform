@@ -31,3 +31,14 @@ taxSwitch.addEventListener("click", () => {
     }
   }
 });
+
+// wishlist icon 
+const heartBtns = document.querySelectorAll(".fa-heart")
+  heartBtns.forEach(function(heartBtn){
+    heartBtn.addEventListener("click", (event)=> {
+    event.stopPropagation();
+    event.preventDefault(); 
+    console.log(event);
+    event.target.classList.toggle("red-heart");
+  })
+})

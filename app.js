@@ -98,6 +98,10 @@ app.use("/", userRoute);
 
 app.use("/api/bookings", bookingRoute);
 
+// app.get("/" , (req, res) => {
+//   res.render('./listings/index.ejs');
+// })
+
 // 404 Not Found
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));

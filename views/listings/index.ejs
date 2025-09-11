@@ -1,58 +1,151 @@
 <% layout("/layouts/boilerplate") %>
 
-    <div id="filters" class="offset-1">
-        <div class="filter">
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
+  <!-- Hero Section -->
+  <section id="hero" class="w-100">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Find Your Perfect</h1>
+      <h1><span>Home Away From Home</span></h1>
+      <p>Discover amazing rooms, apartments, and homes worldwide. Book with confidence, stay with comfort.</p>
+      <div class="button-container">
+        <a class="explore-button" href="/listings/allListing"><i class="fa-solid fa-search"></i> Start Exploring</a>
+        <a class="upload-btn" href="/listings/new"><i class="fa-solid fa-table-list"></i>List Your Property</a>
+      </div>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h2 class="tenk">10K+</h2>
+          <p>Properties</p>
         </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-bed"></i></div>
-            <p>Rooms</p>
+        <div class="stat-box">
+          <h2 class="fiftyk">50K+</h2>
+          <p>Happy Guests</p>
         </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic Cities</p>
+        <div class="stat-box">
+          <h2 class="two-hundred">200+</h2>
+          <p>Cities</p>
         </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain-sun"></i></div>
-            <p>Mountain</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-brands fa-fort-awesome"></i></div>
-            <p>Castles</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-person-swimming"></i></div>
-            <p>Amazing pools</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-route"></i></div>
-            <p>Camping</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-wheat-awn"></i></div>
-            <p>Farms</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-person-snowboarding"></i></div>
-            <p>Arctic</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-sailboat"></i></div>
-            <p>Boat</p>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="row row-cols-large-4 row-cols-md-3 row-cols-sm-2 mt-3">
-        <% for(listing of allListings) { %>
-            <a href="/listings/<%= listing._id %>" class="listing-link" >
-            <div class="card col listing-card">
-                <img src="<%= listing.image.url %>" class="card-img-top" style="height: 20rem" alt="listing_img">
-                <div class="card-img-overlay"></div>
-                <div class="card-body">
-                    <p class="card-text"><b><%= listing.title %></b> <br> &#x20B9;<%= listing.price.toLocaleString("en-IN") %> / night <i class="tax-info">&nbsp;+ 18% GST</i></p>
-                </div>
-            </div>
-            </a>
-        <% } %>
+  <section id="features" class="features-section py-5">
+  <div class="container text-center">
+    <h2 class="features-title">Why Choose Rentify?</h2>
+    <p class="features-subtitle">Experience the future of property booking with our innovative features designed to make your journey seamless.</p>
+    
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="feature-card p-4 h-100">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h5 class="feature-heading">AI-Powered Search</h5>
+          <p class="feature-text">Find your perfect property using natural language search powered by advanced AI.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="feature-card p-4 h-100">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h5 class="feature-heading">Secure Payments</h5>
+          <p class="feature-text">Safe and secure payment processing with industry-leading encryption.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="feature-card p-4 h-100">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h5 class="feature-heading">Verified Properties</h5>
+          <p class="feature-text">All properties are verified and reviewed to ensure quality and authenticity.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="feature-card p-4 h-100">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h5 class="feature-heading">24/7 AI Support</h5>
+          <p class="feature-text">Get instant help anytime with our intelligent customer support chatbot.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+  <!-- Filters -->
+  <!-- <div id="filters" class="offset-1">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain-sun"></i></div>
+      <p>Mountain</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castles</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing pools</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-route"></i></div>
+      <p>Camping</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-wheat-awn"></i></div>
+      <p>Farms</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-person-snowboarding"></i></div>
+      <p>Arctic</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-sailboat"></i></div>
+      <p>Boat</p>
+    </div>
+  </div> -->
+
+  <div class="row justify-content-center text-center mt-6">
+    <h2 class="mt-3 mb-3 fw-bold">Featured Properties</h2>
+    <p class="fs-4">Discover our handpicked selection of amazing properties.</p>
+  </div>
+
+  <!-- Listings -->
+  <div class="row listings-container mt-3">
+    <% for(let i = 0; i < allListings.length && i < 4; i++) {
+      let listing = allListings[i]; %>
+      <a href="/listings/<%= listing._id %>" class="listing-link">
+        <div class="card listing-card">
+          <!-- Wishlist Heart -->
+          <div class="wishlist">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_img">
+          <div class="card-img-overlay"></div>
+          <div class="card-body">
+            <h4 class="card-text">
+              <b><%= listing.title %></b>
+            </h4>
+            <p class="card-text">
+              <i class="fa-solid fa-location-dot"></i>
+              <%= listing.location %>, <%= listing.country %>
+            </p>
+            <p><b>&#x20B9;<%= listing.price.toLocaleString("en-IN") %> </b>/ Night</p>
+          </div>
+        </div>
+      </a>
+      <% } %>
+  </div>

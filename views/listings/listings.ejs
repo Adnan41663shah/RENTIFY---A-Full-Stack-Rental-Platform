@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+    <form class="search-form" role="search">
+      <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations">
+      <button class="btn search-btn" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i> Search
+      </button>
+    </form>
+
+  <!-- Listings -->
+  <div class="row listings-container mt-3">
+    <% for(listing of allListings) { %>
+      <a href="/listings/<%= listing._id %>" class="listing-link">
+        <div class="card listing-card">
+          <!-- Wishlist Heart -->
+          <div class="wishlist">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_img">
+          <div class="card-img-overlay"></div>
+          <div class="card-body">
+            <h4 class="card-text">
+              <b><%= listing.title %></b>
+            </h4>
+            <p class="card-text">
+              <i class="fa-solid fa-location-dot"></i>
+              <%= listing.location %>, <%= listing.country %>
+            </p>
+            <p><b>&#x20B9;<%= listing.price.toLocaleString("en-IN") %> </b>/ Night</p>
+          </div>
+        </div>
+      </a>
+      <% } %>
+  </div>

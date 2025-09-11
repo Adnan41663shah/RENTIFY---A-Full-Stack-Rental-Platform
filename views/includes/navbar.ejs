@@ -3,18 +3,11 @@
     <!-- Brand -->
     <div class="brand-explore">
     <a class="navbar-brand" href="/listings">
-      <i class="fa-regular fa-compass"></i>
+      <i>
+      <img src="/assets/rentifyLogo.png" alt="logo" height="64px" width="150px">
+      </i>
     </a>
-    <a class="nav-link explore-btn" href="/listings">Explore</a>
     </div>
-
-    <!-- Search bar: stays outside the collapse -->
-    <form class="d-flex mx-auto me-3 search-form" role="search">
-      <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations">
-      <button class="btn search-btn" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i> Search
-      </button>
-    </form>
 
     <!-- Hamburger toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -23,22 +16,26 @@
 
     <!-- Collapsible links -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <div class="navbar-nav text-end">
-        <div class="tax-toggle">
-          <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-              <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
-          </div>
-       </div>
-        <a class="nav-link" href="/listings/new"><i class="fa-solid fa-upload me-2"></i>Rentify Your House</a>
-        <% if(!currUser) { %>
-          <a class="nav-link" href="/signup"><b>Signup</b></a>
-          <a class="nav-link" href="/login"><b>Login</b></a>
-        <% } %>
-        <% if(currUser){ %>
-          <a class="nav-link" href="/logout"><b>Logout</b></a>
-        <% } %>
+  <div class="navbar-nav text-end">
+    <% if(!currUser) { %>
+      <a class="nav-link" href="/signup"><b>Signup</b></a>
+      <a class="nav-link" href="/login"><b>Login</b></a>
+    <% } %>
+    <% if(currUser){ %>
+      <p class="nav-link">Welcome, <%= currUser.username %></p>
+
+      <!-- Desktop view user circle with tooltip -->
+      <div class="nav-link user-ch d-none d-md-block">
+        <a href="/profile"><%= currUser.username[0].toUpperCase() %></a>
+        <span class="tooltip-text">My Profile</span>
       </div>
-    </div>
+
+      <!-- Mobile view 'My Profile' link -->
+      <a href="/profile" class="nav-link mobile-profile d-md-none">My Profile</a>
+
+      <a class="nav-link logout d-md-block" href="/logout">Logout</a>
+    <% } %>
+  </div>
+</div>
   </div>
 </nav>

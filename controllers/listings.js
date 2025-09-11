@@ -8,6 +8,11 @@ module.exports.index = async (req, res) => {
   res.render("listings/index", { allListings });
 }
 
+module.exports.allListing = async (req, res) => {
+  const allListings = await Listing.find();
+  res.render("listings/listings", { allListings });
+}
+
 module.exports.renderNewForm = (req, res) => {
   res.render("listings/new");
 }
