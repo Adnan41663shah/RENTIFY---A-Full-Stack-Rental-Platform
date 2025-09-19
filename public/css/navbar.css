@@ -1,9 +1,26 @@
-/* =========================================
-   Navbar Styling
-========================================= */
+
 .navbar {
     height: 5rem;
     background: #F8FAFC  !important;
+}
+.container-fluid {
+    height: 5rem;
+    /* background: #F8FAFC  !important; */
+}
+.home-btn, .signup-btn, .login-btn{
+    font-size: 1.3rem !important;
+    margin-right: 0.5rem !important;
+}
+.home-btn{
+    color: #a66bff !important;
+}
+.login-btn{
+    color: white !important;
+    font-weight: 500 !important;
+    background-color: #4A90E2 !important;
+    border-radius: 8px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 
 /* Default toggler customization */
@@ -31,6 +48,14 @@
 .user-ch a {
     color: #ffffff !important;
     text-decoration: none !important;
+}
+.user-ch img {
+    position: relative;
+    top: -8px !important;
+    left: -8px !important;
+    border-radius: 50%;
+    height: 50px !important;
+    width: 50px !important;
 }
 
 .tooltip-text {
@@ -111,7 +136,15 @@
         margin: 0 !important;
         text-decoration: none !important;
     }
-
+    .login-btn{
+        color: white !important;
+        font-weight: 500 !important;
+        background: none !important;
+        color: #4A90E2 !important;
+        border: none !important;
+        padding-left: 1.5rem !important;
+        padding-right: 0 !important;
+    }
     /* Navbar container styling */
     .navbar-nav {
         margin-left: auto !important;
@@ -122,6 +155,9 @@
         padding: 1rem !important;
         display: flex !important;
         flex-direction: column !important;
+        position: absolute;
+        top:50px !important;
+        right: 0 !important;
     }
 
     /* Ensure links are stacked */
@@ -138,4 +174,19 @@
         width: 1.2rem !important;
         height: 1.2rem !important;
     }
+    .container-fluid{
+        align-items: start !important;
+    }
+    .navbar-brand{
+        position: relative;
+        top: -30px !important;
+        left: -10px !important;
+        padding: 0 !important
+    }
+    .navbar-brand img {
+        max-height: 100px !important;
+        width: 150px !important;
+    }
 }
+
+

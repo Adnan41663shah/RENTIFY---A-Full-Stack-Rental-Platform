@@ -1,0 +1,200 @@
+
+/* Image Styling */
+.show-img {
+    height: 40vh !important;
+    object-fit: cover !important;
+    border-radius: 0.75rem !important;
+    transition: transform 0.3s ease , filter 0.3s ease !important;
+}
+
+.show-img:hover {
+    transform: scale(1.05) !important;
+    filter: brightness(1.1) !important;
+}
+
+/* Card Styling */
+.show-card {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa) !important;
+}
+
+/* Price + tax toggle on same line */
+.price-tax-wrapper {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important; /* force same line */
+}
+
+.price {
+    flex: 1 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+}
+
+.tax-toggle {
+    flex-shrink: 0 !important; /* prevent toggle from shrinking */
+    display: flex !important;
+    justify-content: end !important;
+    align-items: start !important;
+}
+
+.show-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Book Button Styling */
+.book-btn {
+    background: linear-gradient(45deg, #333, #555) !important;
+    border: none !important;
+    transition: background 0.3s ease, transform 0.2s ease !important;
+}
+
+.book-btn:hover {
+    background: linear-gradient(45deg, #555, #333) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Edit/Delete Buttons */
+.edit-btn {
+    background: linear-gradient(45deg, #444, #666) !important;
+    border: none !important;
+    transition: transform 0.2s ease !important;
+}
+
+.edit-btn:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Trash Icon Hover */
+.fa-trash-can{
+    color: #333 !important;
+}
+.fa-trash-can:hover {
+    color: rgb(114, 114, 114) !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Tax Toggle Styling */
+.tax-toggle {
+    display: flex;
+    justify-content: center !important;
+    margin-top: 1.7rem !important;
+    z-index: 22;
+}
+
+/* Reviews Section Styling */
+.reviews-wrapper {
+    margin-bottom: 1.5rem !important;
+}
+
+.review-card {
+    width: 280px !important;
+    flex: 0 0 auto !important;
+    transition: transform 0.3s ease , box-shadow 0.3s ease !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.review-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Scrollbar Styling */
+.reviews-wrapper::-webkit-scrollbar {
+    height: 8px !important;
+}
+
+.reviews-wrapper::-webkit-scrollbar-thumb {
+    background: #aaa !important;
+    border-radius: 4px !important;
+}
+
+.reviews-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+
+/* Map Section Styling */
+#map {
+    height: 400px !important;
+    width: 100% !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+#map:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Price Calculation Box Styling */
+.booking-form .border {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 0.75rem !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+.booking-form .border:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Form Elements Styling */
+input, textarea {
+    border-radius: 0.5rem !important;
+    border: 1px solid #ccc !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3) !important;
+    outline: none !important;
+}
+
+/* Show All Reviews Button */
+.btn-outline-dark {
+    transition: background-color 0.3s ease , color 0.3s ease !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .show-img {
+        height: 30vh !important;
+    }
+
+    .review-card {
+        width: 220px !important;
+    }
+
+    #map {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .show-img {
+        height: 25vh !important;
+    }
+
+    .review-card {
+        width: 180px !important;
+    }
+
+    #map {
+        height: 250px !important;
+    }
+}

@@ -1,11 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-
-<div class="tax-toggle">
-  <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-    <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
-  </div>
-</div>
+  <link rel="stylesheet" href="/css/show.css">
 
   <div class="row mt-3 mb-4">
     <div class="col-12 col-md-6 offset-md-3 mb-2 listing-title text-center">
@@ -20,16 +14,25 @@
         <p class="card-text"><i>
             <%= listing.description %>
           </i></p>
+        <div class="card-text price-tax-wrapper mb-2">
+          <div class="price">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <%= listing.price.toLocaleString("en-IN") %> / night <i class="tax-info">+ 18% GST</i>
+          </div>
+          <div class="tax-toggle">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+              <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
+            </div>
+          </div>
+        </div>
+
         <p class="card-text">
-          <i class="fa-solid fa-indian-rupee-sign"></i>
-          <%= listing.price.toLocaleString("en-IN") %> / night <i class="tax-info">+ 18% GST</i>
-        </p>
-        <p class="card-text">
-          <i class="fa-solid fa-location-dot" style="color: #ff4545;"></i>
+          <i class="fa-solid fa-location-dot me-1" style="color: #696969;"></i>
           <%= listing.location %>
         </p>
         <p class="card-text">
-          <i class="fa-solid fa-globe" style="color: #ff4545;"></i>
+          <i class="fa-solid fa-globe me-1" style="color: #686868;"></i>
           <%= listing.country %>
         </p>
         <div class="d-flex justify-content-between align-items-center">
@@ -38,10 +41,10 @@
               </b></i></p>
           <!-- Book Now Button -->
           <% if (!(currUser && currUser._id.equals(listing.owner._id))) { %>
-          <button class="btn btn-dark book-btn ps-5 pe-5" data-bs-toggle="modal" data-bs-target="#bookingModal">
-            Book Now
-          </button>
-          <% } %>
+            <button class="btn btn-dark book-btn ps-5 pe-5" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              Book Now
+            </button>
+            <% } %>
         </div>
       </div>
     </div>
@@ -76,11 +79,19 @@
 
               <!-- Price Calculation Box -->
               <div class="p-2 border rounded mb-3">
-                <p><b>Price per night:</b> ₹<span id="pricePerNight"><%= listing.price %></span></p>
+                <p><b>Price per night:</b> ₹<span id="pricePerNight">
+                    <%= listing.price %>
+                  </span></p>
                 <p><b>Nights:</b> <span id="nightsCount">1</span></p>
-                <p><b>Subtotal:</b> ₹<span id="subTotal"><%= listing.price %></span></p>
-                <p><b>GST (18%):</b> ₹<span id="gstAmount"><%= (listing.price*0.18).toFixed(2) %></span></p>
-                <p><b>Grand Total:</b> ₹<span id="grandTotal"><%= (listing.price*1.18).toFixed(2) %></span></p>
+                <p><b>Subtotal:</b> ₹<span id="subTotal">
+                    <%= listing.price %>
+                  </span></p>
+                <p><b>GST (18%):</b> ₹<span id="gstAmount">
+                    <%= (listing.price*0.18).toFixed(2) %>
+                  </span></p>
+                <p><b>Grand Total:</b> ₹<span id="grandTotal">
+                    <%= (listing.price*1.18).toFixed(2) %>
+                  </span></p>
               </div>
 
               <button type="submit" class="btn btn-dark w-100">Proceed to Pay</button>

@@ -408,40 +408,8 @@ body {
     background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }
 
-/* =========================================
-   Miscellaneous Styling
-========================================= */
 .tax-info {
     display: none;
-}
-
-.f-info {
-    text-align: center;
-    height: 8rem;
-    background-color: #e3e3e3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.f-info-links,
-.f-info-socials {
-    width: 100%;
-}
-
-.f-info-socials i {
-    margin-right: 1rem;
-    font-size: 1.2rem;
-}
-
-.f-info-links a {
-    text-decoration: none;
-    color: #222222;
-}
-
-.f-info-links a:hover {
-    text-decoration: underline;
 }
 
 /* =========================================
@@ -478,58 +446,4 @@ body {
 
 .book-btn:hover {
     background-position: left bottom !important;
-}
-
-/* =========================================
-   Show Page Specific Styling
-========================================= */
-.show-img {
-    height: 40vh !important;
-}
-
-.btns {
-    display: flex;
-}
-
-.show-card {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.fa-trash-can:hover {
-    color: rgb(82, 3, 3);
-}
-
-/* =========================================
-   Reviews Section Styling
-========================================= */
-.reviews-wrapper {
-    margin-bottom: 1rem;
-}
-
-.review-card {
-    width: 280px;
-    flex: 0 0 auto;
-}
-
-.reviews-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.reviews-wrapper::-webkit-scrollbar-thumb {
-    background: #aaa;
-    border-radius: 4px;
-}
-
-.reviews-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* =========================================
-   Map Section Styling
-========================================= */
-#map {
-    height: 400px;
-    width: 100%;
-    border-radius: 1rem;
 }

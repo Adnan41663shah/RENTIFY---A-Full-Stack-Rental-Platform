@@ -66,18 +66,38 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.updateListing = async (req, res) => {
   const { id } = req.params;
-  let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
 
-  if(typeof req.file !== "undefined"){
-    let url = req.file.path;
-    let filename = req.file.filename;
-    listing.image = {url, filename};
+  try {
+    // Update the listing and return the updated document
+    let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing }, { new: true });
+
+    const address = listing.location;
+    // Google Geocoding API
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${process.env.GOOGLE_MAPS_API_KEY}`);
+    const data = await response.json();
+
+    if (data.results.length > 0) {
+      const { lat, lng } = data.results[0].geometry.location;
+      listing.geometry.type = "Point";
+      listing.geometry.coordinates = [lng, lat];
+    }
+
+    if (req.file) {
+      let url = req.file.path;
+      let filename = req.file.filename;
+      listing.image = { url, filename };
+    }
+
     await listing.save();
-  }
 
-  req.flash("success", "Listing Updated.");
-  res.redirect(`/listings/${id}`);
-}
+    req.flash("success", "Listing Updated.");
+    res.redirect(`/listings/${id}`);
+  } catch (error) {
+    console.error(error);
+    req.flash("error", "Something went wrong while updating the listing.");
+    res.redirect(`/listings/${id}`);
+  }
+};
 
 module.exports.destroyListing = async (req, res) => {
     const { id } = req.params;

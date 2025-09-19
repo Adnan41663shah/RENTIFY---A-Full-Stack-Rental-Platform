@@ -1,0 +1,41 @@
+.footer {
+    background-color: #2d2c2c;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.3s ease !important;
+}
+.social-icons a:hover{
+    color: blue !important;
+
+}
+
+@media (max-width: 767px) {
+    .footer .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}

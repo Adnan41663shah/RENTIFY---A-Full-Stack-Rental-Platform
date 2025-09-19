@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/myBookings.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<div class="container py-4">
+  <h1 class="mb-4">My Bookings</h1>
+
+  <% if(bookings.length === 0) { %>
+    <div class="text-center p-5 bg-light rounded shadow-sm">
+      <h4 class="mb-3">No bookings yet</h4>
+      <a href="/listings/allListing" class="btn btn-primary"><i class="fa-solid fa-search"></i> Explore more</a>
+    </div>
+  <% } else { %>
+    <div class="row g-4">
+      <% bookings.forEach(item => { %>
+        <div class="col-md-6 col-lg-4">
+          <div class="card booking-card shadow-sm h-100">
+            <a href="/listings/<%= item._id %>" class="text-decoration-none text-dark">
+              <div class="position-relative">
+                <img src="<%= item.image.url %>" class="card-img-top booking-img" alt="Listing Image">
+                <div class="wishlist">
+                  <i class="fa-solid fa-heart wishlist-icon" data-listing-id="<%= item._id %>"></i>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= item.title %></h5>
+                <p class="card-text text-muted mb-1">
+                  <i class="fa-solid fa-location-dot"></i> <%= item.location %>, <%= item.country %>
+                </p>
+                <p class="card-text mb-2">
+                  <b>&#x20B9;<%= item.price.toLocaleString("en-IN") %></b> / Night
+                </p>
+                <hr>
+                <h6>Booking Details:</h6>
+                <p class="mb-1"><strong>Check-in:</strong> <%= new Date(item.booking.checkIn).toLocaleDateString() %></p>
+                <p class="mb-1"><strong>Check-out:</strong> <%= new Date(item.booking.checkOut).toLocaleDateString() %></p>
+                <p class="mb-1"><strong>Guests:</strong> <%= item.booking.guests %></p>
+                <p class="mb-1"><strong>Booking-Date:</strong> <%= new Date(item.booking.booking_date).toLocaleDateString() %></p>
+                <p class="mb-1"><strong>Payment-id:</strong> <%= item.booking.paymentId %></p>
+                <p class="mb-0"><strong>Status:</strong> <span class="badge bg-success"><%= item.booking.status %></span></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+    <script src="/js/wishlist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

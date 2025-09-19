@@ -30,8 +30,12 @@ module.exports.validateReview = (req,res,next) =>{
 
 
 module.exports.isLoggedin = (req,res,next) => {
-  // console.log(req.originalUrl);
   if(!req.isAuthenticated()){
+
+    if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+      return res.status(401).json({ success: false, message: "You must be logged in." });
+    }
+
     req.session.redirectUrl = req.originalUrl;
     req.flash("error","You must be Logged in.")
     return res.redirect("/login");

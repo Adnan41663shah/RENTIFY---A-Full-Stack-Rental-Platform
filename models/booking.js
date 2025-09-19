@@ -39,6 +39,10 @@ const bookingSchema = new mongoose.Schema({
     type: String,
     enum: ["Pending", "Confirmed", "Cancelled"],
     default: "Pending"
+  },
+  booking_date: {
+    type : Date,
+    default: Date.now(),
   }
 });
 

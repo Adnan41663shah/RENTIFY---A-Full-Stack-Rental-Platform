@@ -20,7 +20,9 @@ const User = require("./models/user.js")
 const listingRoute = require("./routes/listings.js");
 const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
+const profileRoute = require("./routes/profile.js");
 const bookingRoute = require("./routes/bookings.js");
+const wishlistRoute = require('./routes/wishlist.js');
 
 const dbUrl = process.env.ATLASDB_URl;
 
@@ -96,11 +98,14 @@ app.use("/listings/:id/review", reviewRoute);
 // user routes
 app.use("/", userRoute);
 
-app.use("/api/bookings", bookingRoute);
+// profile route
+app.use("/", profileRoute);
 
-// app.get("/" , (req, res) => {
-//   res.render('./listings/index.ejs');
-// })
+// wishlist route
+app.use('/', wishlistRoute);
+
+// booking router
+app.use("/api/bookings", bookingRoute);
 
 // 404 Not Found
 app.use((req, res, next) => {

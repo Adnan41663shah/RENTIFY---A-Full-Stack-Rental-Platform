@@ -1,31 +1,32 @@
 <% layout("/layouts/boilerplate") %>
-<div class="row"></div>
-  <h2 class="col-6 offset-3 mb-3 mt-3">SingnUp On Rentify</h2>
-  <div class="col-6 offset-3 mb-3">
 
-    <form action="/signup" method="POST" novalidate class="needs-validation">
+<link rel="stylesheet" href="/css/signup.css">
 
-      <div class="mb-3">
-        <label for="username" class="form-label">Username:</label>
-          <input type="text" name="username" class="form-control" placeholder="Enter Username" minlength="5">
-          <div class="valid-feedback">Accepted</div>
-          <div class="invalid-feedback">Username should be valid/greater than or equal to 5 characters!</div>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email:</label>
-          <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
-          <div class="valid-feedback">Accepted</div>
-          <div class="invalid-feedback">Email should be valid!</div>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password:</label>
-          <input type="password" name="password" class="form-control" placeholder="Enter Minimum 8 Characters" minlength="8" required>
-          <div class="valid-feedback">Accepted</div>
-          <div class="invalid-feedback">Password should be valid!</div>
-      </div>
-      <br>
-      <button class="btn btn-success">SignUP</button>
-      
-    </form>
-  </div>
+<div class="signup-box p-4 rounded shadow-lg">
+    <div class="overlay"></div>
+    <div class="signup-content">
+        <h3 class="text-center mb-4">SIGN UP TO RENTIFY</h3>
+        <form action="/signup" method="POST" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">USERNAME</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter Username" minlength="5" required>
+                <div class="valid-feedback">Accepted</div>
+                <div class="invalid-feedback">Username should be valid and at least 5 characters!</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">EMAIL</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
+                <div class="valid-feedback">Accepted</div>
+                <div class="invalid-feedback">Email should be valid!</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">PASSWORD</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter Minimum 8 Characters" minlength="8" required>
+                <div class="valid-feedback">Accepted</div>
+                <div class="invalid-feedback">Password should be valid and at least 8 characters!</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+        <p class="w-100 text-center mt-3">Already have an account? <a class="signup-btn" href="/login">Login</a></p>
+    </div>
 </div>

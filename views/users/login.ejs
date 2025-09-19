@@ -1,26 +1,26 @@
 <% layout("/layouts/boilerplate") %>
-<div class="row"></div>
-  <h2 class="col-6 offset-3 mb-3 mt-3">Login On Rentify</h2>
-  <div class="col-6 offset-3 mb-3">
 
-    <form action="/login" method="POST" novalidate class="needs-validation">
+<link rel="stylesheet" href="/css/login.css">
 
-      <div class="mb-3">
-        <label for="username" class="form-label">Username:</label>
-          <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
-          <div class="valid-feedback">Accepted</div>
-          <div class="invalid-feedback">Username should be valid!</div>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password:</label>
-          <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
-          <div class="valid-feedback">Accepted</div>
-          <div class="invalid-feedback">Password should be valid!</div>
-      </div>
-      <br>
-      <button class="btn btn-success">Login</button>
-      
-    </form>
-
-  </div>
-</div>
+    <div class="login-box p-4 rounded shadow-lg offset-4 offset-md-1">
+    <div class="overlay"></div>
+    <div class="login-content">
+        <h3 class="text-center mb-4">LOG IN TO RENTIFY</h3>
+        <form action="/login" method="POST" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">USERNAME</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">PASSWORD</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+        <p class="w-100 text-center mt-3">Don't have an account? <a class="signup-btn" href="/signup">Signup</a></p>
+        </div>
+    </div>

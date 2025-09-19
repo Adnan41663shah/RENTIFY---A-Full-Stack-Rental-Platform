@@ -6,7 +6,8 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true,
-    }
+    },
+    profileImage: String
 });
 
 userSchema.plugin(passportLocalMongoose);

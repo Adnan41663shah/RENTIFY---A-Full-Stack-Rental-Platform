@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/myListing.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<div class="listings-container mt-3">
+  <h1 class="ms-3">My Listings</h1>
+  <% if(listings.length == 0){ %>
+    <div class="text-center p-5 bg-light rounded shadow-sm">
+      <h4 class="mb-3">No listings yet, click to add...</h4>
+      <a class="upload-btn d-block" href="/listings/new"><i class="fa-solid fa-table-list me-2"></i>List Your Property</a>
+    </div>  
+  <% }else{ %>
+    <a class="upload-btn" href="/listings/new"><i class="fa-solid fa-table-list"></i>Add New Property</a>
+    <% for(let listing of listings) { %>
+    <div class="d-flex ED-container">
+          <a href="/listings/<%= listing._id %>/edit" class="btn">Edit</a>
+          <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+            <button class="btn">Delete</button>
+          </form>
+    </div>
+
+    <div class="listing-card">
+      <a href="/listings/<%= listing._id %>" class="listing-content">
+
+        <!-- Image Section -->
+        <div class="listing-image">
+          <img src="<%= listing.image.url %>" alt="listing_img">
+          <div class="wishlist">
+            <i class="fa-solid fa-heart wishlist-icon" data-listing-id="<%= listing._id %>"></i>
+          </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="listing-details">
+          <h5 class="listing-title"><%= listing.title %></h5>
+          <p class="listing-location"><i class="fa-solid fa-location-dot"></i> <%= listing.location %>, <%= listing.country %></p>
+          <p class="listing-price"><b>&#x20B9;<%= listing.price.toLocaleString("en-IN") %></b> / Night</p>
+        </div>
+
+      </a>
+    </div>
+  <% } }%>
+</div>
+<script src="public/js/wishlist.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

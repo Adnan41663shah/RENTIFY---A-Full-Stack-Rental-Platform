@@ -1,0 +1,104 @@
+.listings-container {
+  padding: 1rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid #ccc;
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.listing-card {
+  width: 100% !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background-color: #fff !important;
+  margin-bottom: 1rem !important;
+}
+
+.listing-content {
+  display: flex !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.listing-image {
+  position: relative !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  overflow: hidden !important;
+}
+
+.listing-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.wishlist {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  /* background-color: rgba(255,255,255,0.9) !important; */
+  padding: 5px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+}
+
+.listing-details {
+  padding: 10px !important;
+  flex-grow: 1 !important;
+}
+
+.listing-title {
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.listing-location {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.listing-price {
+  font-size: 1rem !important;
+  color: #333 !important;
+}
+
+.ED-container{
+  justify-content: end !important;
+}
+.ED-container button, a{
+  transition: box-shadow 0.3s ease;
+}
+.ED-container button:hover, a:hover{
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .listing-content {
+    flex-direction: column !important;
+  }
+
+  .listing-image {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  .listing-details {
+    padding: 15px !important;
+  }
+}
