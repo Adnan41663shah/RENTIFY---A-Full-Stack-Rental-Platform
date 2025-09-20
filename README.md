@@ -1,4 +1,4 @@
-Renttify- A Full Stack Rental Platform
+RENTIFY- A Full Stack Rental Platform
 
 You can check live project using below link:
 https://rentify-a-full-stack-property-rental.onrender.com/listings
