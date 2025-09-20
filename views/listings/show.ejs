@@ -17,7 +17,7 @@
         <div class="card-text price-tax-wrapper mb-2">
           <div class="price">
             <i class="fa-solid fa-indian-rupee-sign"></i>
-            <%= listing.price.toLocaleString("en-IN") %> / night <i class="tax-info">+ 18% GST</i>
+            <%= listing.price.toLocaleString("en-IN") %> / Day <i class="tax-info">+ 18% GST</i>
           </div>
           <div class="tax-toggle">
             <div class="form-check form-switch">
@@ -79,10 +79,10 @@
 
               <!-- Price Calculation Box -->
               <div class="p-2 border rounded mb-3">
-                <p><b>Price per night:</b> ₹<span id="pricePerNight">
+                <p><b>Price per Day:</b> ₹<span id="pricePerNight">
                     <%= listing.price %>
                   </span></p>
-                <p><b>Nights:</b> <span id="nightsCount">1</span></p>
+                <p><b>Days:</b> <span id="nightsCount">1</span></p>
                 <p><b>Subtotal:</b> ₹<span id="subTotal">
                     <%= listing.price %>
                   </span></p>
